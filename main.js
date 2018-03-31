@@ -1,6 +1,6 @@
 'use strict';
 
-// Добавил проект на ноут
+// Добавил проект на ноут//
 
 window.onload = function () {
     var slides = document.querySelectorAll('#slides .slide');
