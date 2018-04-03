@@ -1,108 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
 h1 {
     text-align: center;
 }
-
-#slide_div {
-    border: 1px dotted black;
-    border-radius: 5px;
-    padding: 5px;
-    background: #DFDFDF;
+#main {
+    height: 400px;
     width: 80%;
-    height: 600px;
-    display: flex;
-    /*align-items: center;*/
-    /*justify-content: center ;*/
     margin: 0 10%;
+    border: 1px black dotted;
+    /*border: dashed;*/
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 
+#screen {
+    position:relative;
+    display: flex;
+    background-color: dimgrey;
+    height: 345px;
+}
 #slides {
-    position: relative;
     height: 100%;
     width: 100%;
     list-style-type: none;
-    margin: 1px;
-    padding: 1px;
     background: #494949;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
 
 }
-
 .slide {
-    position: absolute;
     left: 1px;
     top: 1px;
+    height: 0%;
+    /* Разобаться потом, со сщачение "height: 0%" мгновенно исчезает предыдущая картинка, если рпстаить больше, каждаю следующая картинки из списка иъезжает вниз*/
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
     opacity: 0;
     z-index: 1;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
-
+    -webkit-transition: opacity 5s;
+    -moz-transition: opacity 5s;
+    -o-transition: opacity 5s;
+    transition: opacity 5s;
 }
-
 .showing {
+    height: 100%;
+    width: 100%;
+    display: flex;
     opacity: 1;
     z-index: 2;
-    text-align: center;
+    /*text-align: center;*/
 }
-
 img {
-    max-width: 100%;
     max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
 }
 
-#screenSlider {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: 1px;
-    padding: 1px;
-    background: #494949;
+#controlBar {
+    background: azure;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
 }
-
-#tempDIV {
-    border: 1px dotted black;
-    border-radius: 5px;
-    padding: 5px;
-    background: #DFDFDF;
-    width: 80%;
+#buttonBar {
+    background-color: beige;
     height: 100%;
-    margin: 0 10%;
+    width: 150px;
+    display: flex;
 }
-
-#controlPanel {
-    clear: both;
-    background: #DFDFDF;
+#infoBar {
     width: 100%;
-    height: 25px;
-    padding: 0;
-    margin: 0;
+    /*background-color: blueviolet;*/
+    background-color: darkgray;
+
 }
 
-#button_bar {
-    float: left;
-    background: #DFDFDF;
-    width: 30%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+#countFile {
+    background-color: red;
 }
 
 #fileName {
-    float: left;
-    background: #DFDFDF;
-    width: 70%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+    background-color: whitesmoke;
+    padding: 1px 10px;
 }
 
 .controls {
@@ -114,14 +97,26 @@ img {
 }
 #pause {
     background: url('pic/pause.png');
+    margin: auto;
 }
-
-
 #previous {
     background:url('pic/prev.png');
+    margin: auto;
 }
-
 #next {
     background:url('pic/next.png');
+    margin: auto;
+}
 
+#ceterButonBar {
+    border: 1px red dotted;
+    position: absolute; /* относительно родительского relative */
+    width: 100%;
+
+    height: 50px;
+    /*max-height: 100%;*/
+    /*max-width: 100%;*/
+    display: block;
+    align-items: center;
+    flex-direction: row;
 }
